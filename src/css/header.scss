@@ -1,0 +1,61 @@
+@import "var";
+
+#header { height: $header_h; position: fixed; left: 0; top: 0; z-index: 999; width: 100%; transition: .3s ease; color: $white;
+  .layout_inner{ height: 100%;}
+  @include screen('mo'){
+    height: $header_h_m;
+  }
+  &.bg, &.on{ background-color: $white;
+    .logo{filter: none;}
+    .gnb{ color: $ci2;}
+    .all_menu_btn{ 
+      &::before, &::after{ background-color: $black;}
+    }
+  }
+  .logo{ width: 78rem; filter: brightness(0) invert(1); transition: .3s ease; z-index: 2; position: relative;
+    @include screen('mo'){
+      width: 40rem;
+    }
+    .logo_word{ transition: .5s ease;}
+  }
+  .gnb{
+    @include screen("mo"){ width: 100%; height: 100vh; position: absolute; left: 0; top: 0; touch-action: none; pointer-events: none;
+      .dim{ backdrop-filter: blur(0rem); transition: 1s ease; }
+    }
+    ul{ display: flex; gap: 60rem; font-weight: 700; font-size: 14rem;
+      @include screen("mo"){
+        transform: translateY(-100%); transition: .5s ease;  flex-direction: column; gap: 20rem; background-color: $white;
+        color: $ci2; padding: 78rem $layout_pd_m 40rem; text-align: right;
+        z-index: 1; position: absolute; left: 0; top: 0; width: 100%;
+      }
+      li{ position: relative; overflow: hidden;
+        &:hover p, &.on p{ transform: translateY(-100%);}
+        &.on a{ touch-action: none; pointer-events: none; cursor: default;}
+        p{ transition: .3s ease;
+          +p{ color:$ci; position: absolute; left: 0; top: 100%; width: 100%;}
+        }
+      }
+    }
+  }
+  @include screen("mo"){
+    &.on{
+      .gnb{ touch-action: auto; pointer-events: auto;
+        ul{transform: translateY(0);}
+        .dim{ backdrop-filter: blur(5rem);}
+      }
+      .all_menu_btn{
+        &::before, &::after{ top: 50%;}
+      }
+    }
+    .all_menu_btn{ width: 40rem; height: 10rem; position: relative; z-index: 2;
+      &::before, &::after{ content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 1px; background-color: $white; transition: .5s ease;
+      }
+      &::after{ top: calc(100% - 1px);}
+    }
+  }
+
+
+  #progress_bar{ width: 100%; height: 2px; position: absolute; left: 0; bottom: 0;
+    i{ display: block; width: 0%; height: 100%; background-color: $ci;}
+  }
+}

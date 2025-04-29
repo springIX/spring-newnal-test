@@ -1,0 +1,36 @@
+<svg width="442" height="318" viewBox="0 0 442 318" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M139 161C218.164 161 218.164 31 297.335 31H467" stroke="white" stroke-opacity="0.5"/>
+<path d="M139 161C218.164 161 218.164 291 297.335 291H467" stroke="white" stroke-opacity="0.5"/>
+<path d="M335 29V289" stroke="white" stroke-opacity="0.5"/>
+<circle cx="29" cy="29" r="29" transform="matrix(-1 0 0 1 364 0)" fill="black"/>
+<circle cx="29" cy="29" r="28.5" transform="matrix(-1 0 0 1 364 0)" stroke="white" stroke-opacity="0.5"/>
+<circle cx="4" cy="4" r="4" transform="matrix(-1 0 0 1 350 19)" fill="#FF4B1C"/>
+<circle cx="4" cy="4" r="4" transform="matrix(-1 0 0 1 339 19)" fill="#FF4B1C"/>
+<circle cx="4" cy="4" r="4" transform="matrix(-1 0 0 1 328 19)" fill="#FF4B1C"/>
+<circle cx="4" cy="4" r="4" transform="matrix(-1 0 0 1 328 31)" fill="#FF4B1C"/>
+<circle cx="4" cy="4" r="4" transform="matrix(-1 0 0 1 339 31)" fill="#FF4B1C"/>
+<circle cx="4" cy="4" r="4" transform="matrix(-1 0 0 1 350 31)" fill="#FF4B1C"/>
+<path d="M105 161H443" stroke="url(#paint0_linear_596_1816)"/>
+<circle cx="29" cy="29" r="29" transform="matrix(-1 0 0 1 364 130)" fill="black"/>
+<circle cx="29" cy="29" r="28.5" transform="matrix(-1 0 0 1 364 130)" stroke="white" stroke-opacity="0.5"/>
+<circle cx="6" cy="6" r="6" transform="matrix(-1 0 0 1 349 145)" fill="#FF4B1C"/>
+<circle cx="6" cy="6" r="6" transform="matrix(-1 0 0 1 333 145)" fill="#FF4B1C"/>
+<circle cx="6" cy="6" r="6" transform="matrix(-1 0 0 1 333 161)" fill="#FF4B1C"/>
+<circle cx="6" cy="6" r="6" transform="matrix(-1 0 0 1 349 161)" fill="#FF4B1C"/>
+<circle cx="16" cy="16" r="16" transform="matrix(-1 0 0 1 121 145)" fill="#FF4B1C"/>
+<circle cx="29" cy="29" r="29" transform="matrix(-1 0 0 1 364 260)" fill="black"/>
+<circle cx="29" cy="29" r="28.5" transform="matrix(-1 0 0 1 364 260)" stroke="white" stroke-opacity="0.5"/>
+<circle cx="4" cy="4" r="4" transform="matrix(4.37114e-08 1 1 -4.37114e-08 331.5 285.5)" fill="#FF4B1C"/>
+<circle cx="4" cy="4" r="4" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 339 306)" fill="#FF4B1C"/>
+<circle cx="4" cy="4" r="4" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 323 306)" fill="#FF4B1C"/>
+<circle cx="4" cy="4" r="4" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 323 281)" fill="#FF4B1C"/>
+<circle cx="4" cy="4" r="4" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 339 281)" fill="#FF4B1C"/>
+<circle cx="4" cy="4" r="4" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 347 294)" fill="#FF4B1C"/>
+<circle cx="4" cy="4" r="4" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 315 294)" fill="#FF4B1C"/>
+<defs>
+<linearGradient id="paint0_linear_596_1816" x1="105" y1="161.5" x2="443" y2="161.5" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FF4B1C"/>
+<stop offset="1" stop-color="#FF4B1C" stop-opacity="0.2"/>
+</linearGradient>
+</defs>
+</svg>

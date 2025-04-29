@@ -1,0 +1,810 @@
+@import "var";
+#contents{
+  section{
+    /* PUBLIC PUBLIC PUBLIC PUBLIC PUBLIC PUBLIC */
+    .ci_s{ color: $ci_s;}
+    .ci2_s{ color: $ci2_s;}
+    h2{ font-size: 72rem; color: $ci; line-height: 1.1;
+      @include screen('mo'){ font-size: 42rem;}
+    }
+    &.white_bg{ background-color: #FDF1EF;
+      h2{ color: $ci2;} 
+    }
+    .arr_btn{ width: 70rem; height: 70rem; border-radius: 50%; background-color: $white; overflow: hidden;
+      @include screen('mo'){
+        width: 48rem; height: 48rem;
+      }
+      &::after{ content: ''; width: 100%; height: 100%; display: block; background: url(../images/ico_arr.svg)no-repeat center center / 40% auto;}
+      &:hover::after{ animation: arr_move .5s ease both;
+        @keyframes arr_move {
+          0%{transform: translateX(0%);}
+          49.9%{transform: translateX(100%);}
+          50%{transform: translateX(-100%);}
+          100%{transform: translateX(0%);}
+        }
+      }
+    }
+    @include screen('mo'){
+      .x_scr_box{ position: relative;
+        &::before{ content: ''; width: 100rem; height: 100rem; background: url(../images/swipe_info.svg)no-repeat center center / contain; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 20; transition: .5s ease;}
+      }
+      .off.x_scr_box::before{ transform: translate(-50%, -50%) scale(0); opacity: 0;}
+    }
+    /* //PUBLIC PUBLIC PUBLIC PUBLIC PUBLIC PUBLIC */
+    
+    
+    /* KEY VISUAL KEY VISUAL KEY VISUAL KEY VISUAL */
+    &#key_visual{ width: 100%; height: 3000rem; position: absolute; left: 0; top: 0; z-index: 10; transition: 0s !important;
+      .fade_up{ transform: translateY(100rem); opacity: 0; transition: 1s ease;}
+      .zoom_in{ transform: scale(0); opacity: 0; transition: 1s ease;}
+      &.aos-animate{
+        .dly2{ transition-delay: .2s;}
+        .dly4{ transition-delay: .4s;}
+        .dly6{ transition-delay: .6s;}
+        .dly8{ transition-delay: .8s;}
+        .fade_up{ transform: translateY(0rem); opacity: 1;}
+        .zoom_in{ transform: scale(1); opacity: 1;}
+      }
+      .sticky_box{ background: linear-gradient(180deg, $black 0%, transparent 43.56%), $deep_blue; color: $white; 
+        @include screen('mo'){ background-color: #070301;}
+        .visual_device{ 
+          video{ touch-action: none; pointer-events: none;
+            &#main_intro{ z-index: 1;}
+            &#main_visual{}
+          }
+          @include screen('mo'){ 
+            video{ height: 480rem; top: auto; bottom: 0;}
+          }
+          .main_txt{ display: flex; flex-direction: column; justify-content: center; z-index: 11; height: 100%;
+            @include screen('mo'){ display: block; padding-top: 142rem;}
+            h1{ font-size: 200rem; font-weight: 700; line-height: 1; white-space: nowrap;
+              @include screen('mo'){ font-size: 56rem; line-height: 1.1; text-align: left;}
+              &.type_ci{ color: $ci;
+                @include screen('mo'){ font-size: 80rem; white-space: nowrap;}
+              }
+              span{ font-weight: 400;}
+            }
+            .scr_down{ transform: rotate(90deg); position: absolute; right: 44rem; bottom: 131rem; z-index: 20;
+              @include screen('mo'){ right: 16rem; bottom: 51rem;}
+            }
+          }
+        }
+      }
+    }
+    /* //KEY VISUAL KEY VISUAL KEY VISUAL KEY VISUAL */
+    
+    /* NEWNAL INTRODUCE NEWNAL INTRODUCE NEWNAL INTRODUCE */
+    &#newnal_introduce{ position: relative; 
+      #newnal_introduce_anchor{ position: absolute; left: 0; 
+        top: 1800rem; //gnb 버튼 눌렀을 때 & 스크롤 위치 발동시점 
+        bottom: 0;
+      }
+      .phone_movement_wrap{ 
+        height: 6000rem; // 애니메이션 전체적인 폭 ( height값이 낮으면 속도 UP) 
+        position: relative;
+        .sticky_box{ background-color: $bg;
+          @include screen('mo'){
+            &::before{ content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 50rem; background: linear-gradient(transparent, #e3e7f6 90%);z-index: 10;}
+          }
+        }
+        #interaction_phone{ transform: translateY(100%);
+          @include screen('mo'){
+            transform: translateY(100%) scale(1.25);
+          }
+          img{ object-fit: contain;}
+        }
+        .intro_tit{ width: 100%; font-size: 108rem;
+          @include screen('mo'){ font-size: 42rem; line-height: 1.1;}
+        }
+      }
+      .introduce_cont{ margin-top: 50rem; overflow: hidden;
+        &:nth-child(odd){ 
+          .visual_box{ margin-left: auto;}
+          .txt_box{ right: auto; left: 194rem;
+            @include screen('mo'){ padding-left:0;}
+          }
+        }
+        @include screen('mo'){
+          &.cont1{ display: flex; flex-direction: column-reverse;
+            .txt_box{ text-align: center;}
+          }
+        }
+        .txt_box{ position: absolute; right: 116rem; top: 50%; transform: translateY(-50%); z-index: 10; font-size: 40rem;
+          @include screen('mo'){ position: static; font-size: 24rem; transform: none; padding-left:56rem;
+            br:not(.both){ display: none;}
+          }
+          h2{ font-size: 100rem; font-weight: 800; margin-bottom: 40rem; 
+            span{ display: block;}
+            @include screen('mo'){ margin-bottom: 24rem; font-size: 42rem;}
+          }
+        }
+        .visual_box{ width: 1080rem; height: 1080rem;
+          @include screen('mo'){ width: 100%; height: auto;}
+          > *{ width: 100%; height: 100%; object-fit: contain;
+            @include screen('mo'){ width: 140%; margin-left: -20%;}
+          }
+        }
+        .vid_box{ position: relative; overflow: hidden;
+          video{ z-index: 1; position: relative;}
+          &::before{ content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: url(../images/intro_device/intro_device_vid_frame.png)no-repeat center center / cover; z-index: 2;}
+        }
+      }        
+    }
+    /* //NEWNAL INTRODUCE NEWNAL INTRODUCE NEWNAL INTRODUCE */
+    
+    /* CORE TECH CORE TECH CORE TECH CORE TECH CORE TECH */
+    &#core_tech{
+      @include screen('mo'){ padding-top: 76rem; margin-top: 181rem;}
+      &::after{ z-index: 10; content: ''; width: 100%; height: 100%; position: absolute; left: 0; top: 0; background: url(../images/core_tech_border.png)no-repeat center top / 100% auto; touch-action: none; pointer-events: none;}
+      .core_tech_visual{ position: relative;
+        @include screen('mo'){
+          video{ height: 276rem; object-fit: cover;}
+        }
+        .txt_box{ width: 100%; line-height: 1.1;  position: absolute; left: 0%; top: 158rem; z-index: 1;
+          @include screen('mo'){ position: static;}
+          .info{ font-size: 24rem; margin-top: 24rem;
+            @include screen('mo'){ font-size: 16rem; margin-top: 20rem; line-height: 1.5;}
+          }
+        }
+      }
+
+      .core_tech_category{ height: 4000rem; 
+        .category_list{ top: $header_h;
+          @include screen("mo"){ top: $header_h_m;}
+          ol{ counter-reset: core_tech_cate; width: 100%; height: 100%;
+            > li{ background-color: $bg; width: 100%; height: 100%;
+              &:not(:first-child){ height: 100%; border-top: 1px solid rgba($color: $black, $alpha: .2); position: absolute; left: 0; top: 0; 
+                .tit_box{ color: $ci_s;}
+              }
+              .tit_box{ display: flex; align-items: center; color: $ci; height: 180rem; font-size: 24rem; 
+                @include screen('mo'){ justify-content: space-between; font-size: 16rem; height: 104rem;}
+                span::before{ counter-increment: core_tech_cate; content: "0"counter(core_tech_cate);}
+              }
+              .info_box{ padding: 0 120rem 80rem;
+                @include screen('mo'){ padding: 0 0 60rem;}
+                .img_box{ padding-top: 50rem;
+                  @include screen('mo'){ padding: 0 0 32rem;}
+                  img{ height: 430rem; width: 697rem; object-fit: contain;
+                    @include screen('mo'){ width: 80%; height: auto; margin: 0 auto;}
+                  }
+                }
+                .txt_box{ font-size: 36rem;
+                  @include screen('mo'){ font-size: 18rem;}
+                  p + p{ margin-top: 40rem;
+                    @include screen('mo'){ margin-top: 16rem;}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    /* //CORE TECH CORE TECH CORE TECH CORE TECH CORE TECH */
+    
+    /* SPEC SPEC SPEC SPEC SPEC SPEC SPEC SPEC SPEC SPEC */
+    &#spec{ padding-top: 150px;
+      @include screen('mo'){ padding-top: 120rem;}
+      .spec_tit_box{
+        h2{ margin-bottom: 24rem;
+          @include screen('mo'){ margin-bottom: 20rem;}
+        }
+        .col2_box{
+          .sub_tit{ @include font-size(32rem);
+            @include screen('mo'){ @include font-size(18rem);}
+          
+          }
+          .info{ @include font-size(24rem); color: $ci2;
+            @include screen('mo'){ @include font-size(16rem); margin-top: 40rem;
+              br{ display: none;}
+            }
+            
+          }
+        }
+      }
+      .spec_main_list{ padding: 160rem 0 60rem;
+        @include screen('mo'){ padding: 88rem $layout_pd_m 32rem; @include m_full_layout;  overflow-x: scroll;  overflow-y: hidden; margin-bottom: 60rem;
+          &::-webkit-scrollbar{ display: block; background-color: $ci2_s; height: 1px;}
+          &::-webkit-scrollbar-thumb{ background-color: $ci;}
+        }
+        ul{  display: grid; grid-template-columns: repeat(4, 1fr);  grid-template-rows:312rem 108rem 312rem; gap: 40rem;
+          @include screen('mo'){ width: 1350rem; gap: 16rem; grid-template-columns: repeat(4, 1fr); grid-template-rows:auto; }
+          .fade_up{ transform: translateY(100rem); opacity: 0; transition: 1s ease;}
+          &.aos-animate{
+            .fade_up{ transform: translateY(0rem); opacity: 1;}
+            @for $i from 1 through 10 {
+              .dly#{$i} {
+                transition-delay: #{0.1 * $i}s;
+              }
+            }
+          }
+          li{ display: flex; flex-direction: column; justify-content: space-between; width: 100%; background-color: #CBD2E6; border-radius: 20rem; padding: 44rem; position: relative; overflow: hidden;
+            @include screen('mo'){  border-radius: 16rem; padding: 24rem; height: 290rem;}
+            &.device { grid-column: span 2;  overflow: visible;
+              @include screen('pc'){ grid-row: span 2;}
+              .img_box{ overflow: hidden; position:absolute; width: 100%; height: 550rem; left: 0; bottom: 0;
+                @include screen('mo'){ height: 400rem;}
+                img{  position: absolute; bottom: 0rem;
+                  @include screen('mo'){ bottom: -60rem;}
+                  &.device_img1{ width: 263rem; left: 201rem;
+                    @include screen('mo'){ width: 200rem; left: 170rem;}
+                  }
+                  &.device_img2{ width: 234rem; right: 232rem;
+                    @include screen('mo'){ width: 177rem; right: 163rem;}
+                  }
+                }
+              }
+            }
+            &:not(.device) img{ width: 110rem; height: 110rem; object-fit: contain; margin: 0 auto;
+              @include screen('mo'){ width: 100rem; height: 100rem;}
+            }
+            @include screen('pc'){
+              &.display { grid-row: span 2; }
+              &.cpu{ grid-row: span 2;}
+            }
+            p{ text-align: center; font-size: 24rem; width: 106%; margin-left: -3%; letter-spacing: -1rem; min-height: 102rem;
+              @include screen('mo'){ font-size: 18rem; min-height: 75rem;}
+            }
+          }
+        }
+      }
+      .spec_sub_list_wrap{
+        @include screen('mo'){ display: block;}
+        ul{
+          li{ min-height: 100rem; display:flex; align-items: center; overflow: hidden; position: relative;
+            @include screen('mo'){ min-height: 64rem; padding: 10rem 0;
+              br:not(.mo){ display: none;}
+              word-break: break-all;
+            }
+            .fade_up{ transform: translateY(100rem); opacity: 0; transition: 1s ease;}
+            > *{ transform: translateY(100rem); opacity: 0; transition: 1s ease;}
+            &.aos-animate{
+              > *{ transform: translateY(0rem); opacity: 1;}
+              p{ transition-delay: .2s; color: $ci2_s;}
+            }
+            
+            &::before,&::after{ content: ''; width: 0%; height: 1px; background-color: $ci; transition: 1s $expo; position: absolute; left: 0; bottom: 0;}
+            &::before{ width: 100%; background-color:#c1c5d2;}
+            &:hover::after{ width: 100%;}
+            span{ width: 300rem; flex-shrink: 0;
+              @include screen('mo'){ width: 110rem;}
+            }
+            p{ width: 100%; opacity: .6;}
+          }
+        }
+      }
+      .info{ @include font-size(16rem); margin-top: 16rem;color: $ci2_s;
+        @include screen('mo'){ 
+          @include font-size(12rem); 
+          margin-top: 12rem;
+        }
+      }
+    }
+    /* SPEC SPEC SPEC SPEC SPEC SPEC SPEC SPEC SPEC SPEC */
+
+    /* PRODUCT VIDEO PRODUCT VIDEO PRODUCT VIDEO */
+    $pd_vid_grid: 617rem;
+    $pd_vid_grid_m: 44rem;
+    &#product_video{ padding: 360rem 0 280rem;
+      @include screen('mo'){  padding: 160rem 0;}
+      .txt_box{ margin-bottom: 206rem; display: flex; position: relative; 
+        @include screen('mo'){ margin-bottom: 80rem; display: block;}
+        h2{ width: $pd_vid_grid;
+          @include screen('mo'){ margin-bottom: 24rem; width: auto;}
+        }
+        .info{ font-size: 24rem;
+          @include screen('mo'){ font-size: 16rem;}
+          p+p{ margin-top: 20rem;
+            @include screen('mo'){ margin-top: 16rem;}
+          
+          }
+        }
+      }
+      .vid_list{
+        ul{
+          li{ padding-left: $pd_vid_grid; @include font-size(40rem); position: relative; display: flex; align-items: center; gap: 24rem; 
+            @include screen('mo'){ @include font-size(24rem); padding-left: 40rem; gap: 11rem;}
+            + li{ margin-top: 8rem;}
+            &::before{ content: ''; width: calc($pd_vid_grid - 52rem); height: 1px; position: absolute; left: 0; top: 50%; background-color: $ci; transform: scaleX(0); transform-origin: left center; transition: .5s ease;
+              @include screen('mo'){ width: $pd_vid_grid_m; left: -$layout_pd_m;}
+            }
+            &::after{ content: ''; display: block; width: 38rem; height: 38rem; overflow: hidden; border-radius: 50%; background: $ci url(../images/ico_play.svg)no-repeat center center / contain; opacity: 0; transition: .5s ease; transform: translateX(-50%);
+              @include screen('mo'){ width: 34rem; height: 34rem;}
+            }
+            button{ overflow: hidden; position: relative;
+              span{ display: block;
+                + span{ color: $ci; position: absolute; left: 0; top: 100%;}
+                i{ display: inline-block;  transition: .5s ease;}
+              }
+            }
+            &.on{color: $ci;
+              &::before{ transform: scaleX(1);}
+              &::after{ transition-delay: .3s; opacity: 1; transform: translateX(0%);}
+              button span i{transform: translateY(-100%);}
+            }
+          }
+        }
+      }
+      .vid_box{ width: 446rem; position: absolute; right: 0; bottom: 0; transition: .5s $expo;
+        @include screen('mo'){  width: 100%; position: relative;}
+        &.off{ transform: translateY(50rem); opacity: 0;}
+        .vid_frame{ width: 100%; height: 251rem; border-radius: 4rem; overflow: hidden; background: url(../images/product_video_thumb.jpg)no-repeat center center / cover;
+          video{ width: 100%; height: 100%; object-fit: cover;}
+        }
+        p{ display: flex; align-items: flex-start; gap: 2rem; @include font-size(12rem); padding-top: 12rem; opacity: .6; font-weight: 500; position: absolute; left: 0; top: 100%;
+          @include screen('mo'){ padding: 50rem 0 0 $pd_vid_grid_m; position: static; }
+          &::before{ content: '※ ';}
+        }
+        // &.on{ position: fixed; width: 100%; height: 100%;
+        //   .vid_frame{ height: 100%;}
+        // }
+      }
+
+      .vid_pop{ width: 100%; height: 100vh; position: fixed; left: 0; top: 0; touch-action: none; pointer-events: none; opacity: 0; transition: .5s ease; display: flex; align-items: center; justify-content: center; padding: 44rem; z-index: 1000;
+        &.on{ touch-action: auto; pointer-events: auto; opacity: 1;
+          .pop_cont{ transform: translateY(0); opacity: 1;}
+        }
+        .dim{ width: 100%; height: 100%; position: absolute; left: 0; top: 0; background: rgba($color: $black, $alpha: .5);}
+        .pop_cont{ width: 1566rem; height: 879rem; margin: 0 auto; position: relative; transform: translateY(100rem); opacity: 0; transition: 1s ease;
+          @include screen('mo'){ width: 100%; height: auto;}
+          .vid_frame{ width: 100%; height: 100%; border-radius: 4rem; overflow: hidden;
+            video{ width: 100%; height: 100%; object-fit: cover;} 
+          }
+          .close_btn{ position: absolute; left: calc(100% + 14rem); top: 0; width: 51rem; height: 51rem; background: url(../images/ico_close.svg)no-repeat center center / contain; transition: .5s ease;
+            &:hover{transform: rotate(90deg);}
+            @include screen('mo'){  left: auto; right: 2rem; top: auto; bottom: calc(100% + 7rem); width: 15rem; height: 15rem;}
+            
+          }
+        }
+      }
+    }
+    /* //PRODUCT VIDEO PRODUCT VIDEO PRODUCT VIDEO */
+
+    /* MEDAI HIGHLIGHT MEDAI HIGHLIGHT MEDAI HIGHLIGHT */
+    &#media_highlight{ padding: 185rem 0 216rem; border: 1px solid #000; border-color: color-mix(in srgb, $ci 10%, transparent); border-width: 1px 0; background: url(../images/media_highlight_bg.png)no-repeat left top / 100% auto; 
+      @include screen('mo'){ padding: 120rem 0 0; border-bottom: none;background-size: 350% auto; background-position: -250rem top;
+        h2{ @include m_full_layout;}
+      }
+      
+      .media_cont{ width: 1400rem; margin: 270rem auto 0; display: flex;
+        @include screen('mo'){ width: 100%; margin-top: 80rem; display: block;}
+        .info_box{ width: 100%; display: flex; flex-direction: column; justify-content: space-between;
+          .tit_box{ display: flex; align-items: flex-start; gap: 70rem;
+            @include screen('mo'){ display: block;}
+
+            .tit{ width: 100%;
+              @include screen('mo'){ margin-bottom: 24rem;}
+              span img{ width: 122rem; filter: brightness(0);}
+              strong{ display: block; margin-top: 47rem; font-size: 40rem; line-height: 1.1;
+                @include screen('mo'){ margin-top: 32rem; font-size: 24rem;}
+              }
+            }
+            .thumb{ width: 365rem; border-radius: 40rem; overflow: hidden; flex-shrink: 0;
+              @include screen('mo'){ width: 100%; height: auto;}}
+          }
+          .info_box{ padding-bottom:76rem; 
+            @include screen('mo'){ padding-bottom: 0;}
+            .detail_info{ border-bottom: 1px solid rgba($color: $black, $alpha: .2); margin-bottom: 42rem; padding-bottom: 45rem;
+              @include screen('mo'){ display: block; margin: 24rem 0 20rem ; padding-bottom: 20rem}
+              p{ @include ellip(3); width: 525rem; 
+                @include screen('mo'){ width: 100%;}
+              }
+              @include screen('mo'){ 
+                .arr_btn{ margin:40rem 0 0 auto;}
+              }
+            }
+            .write_info{
+              @include screen('mo'){ @include font-size(16rem); flex-direction: column; align-items: flex-start;}
+
+              .writer{ color: $ci;}
+            }
+          }
+        }
+        .list_box{ flex-shrink: 0; width: 400rem; margin-left: 65rem; padding-left: 76rem; border-left: 1px solid rgba($color: $black, $alpha: .2); 
+          @include screen('mo'){ margin: 60rem 0 0; width: 100%; padding-left: 0; border-left: none; }
+
+          .tit{ margin-bottom: 46rem;@include font-size(24rem);
+            @include screen('mo'){ margin-bottom: 25rem;}
+          }
+          .swiper{
+            @include screen('mo'){ border: 1px solid rgba($color: $black, $alpha: .2); border-width: 1px 0; @include m_full_layout;} 
+            ul{ 
+              @include screen('pc'){ display: block; transform: none !important;}
+              li{  position: relative; height: auto;
+                @include screen('pc'){
+                  &:not(:last-child) a{ border-bottom: 1px solid rgba($color: $black, $alpha: .2);}
+                }
+
+                a{display: flex; align-items: center; position: relative;padding: 30rem 0; width: 100%; height: 100%;
+                  @include screen('mo'){ padding: 18rem $layout_pd_m;}
+                  @include screen('pc'){
+                    &::after{ content: ''; width: 0%; height: 1px; background-color: $ci; transition: 1s $expo; position: absolute; left: 0; bottom: -1px;}
+                  }
+                  .logo_box{ width: 80rem; height: 80rem; border-radius: 4rem; overflow: hidden; margin-right: 24rem; flex-shrink: 0;
+                    @include screen('mo'){ width: 72rem; height: 72rem; margin-right: 16rem}
+                  }
+                  .txt_box{
+                    p{ @include ellip(2); transition: .5s ease;
+                      @include screen('mo'){ font-size: 14rem; width: 210rem;}
+                    }
+                    span{ display: block; margin-top: 10rem; opacity: .6; font-size: 14rem; font-weight: 500;}
+                  }
+                  &:hover{
+                    .txt_box p{ color: $ci;}
+                    &::after{ width: 100%;}
+                  }
+                }
+              }
+            }
+          }
+          .pagi{ text-align: center; font-size: 0; margin-top: 16rem;
+            span{width: 10rem; height: 10rem; background-color: #676A77; margin: 0 3rem; opacity: 1; transition: .5s ease; border-radius: 999rem;
+              &.swiper-pagination-bullet-active{ width: 28rem; background-color: $ci;}
+            }
+          }
+        }
+      }
+    }
+    /* //MEDAI HIGHLIGHT MEDAI HIGHLIGHT MEDAI HIGHLIGHT */
+    
+    /* PRE ORDER PRE ORDER PRE ORDER PRE ORDER */
+    &#pre_order{ padding-top: 230rem; position: relative; border-bottom: 1px solid $ci; overflow: hidden; background: url(../images/pre_order_bg.png)no-repeat center bottom -1px / 100% auto;
+      @include screen('mo'){ padding-top: 160rem; border-bottom: none; background: none;}
+      .tit_box{ font-weight: 700; font-size: 200rem; line-height: 1;
+        @include screen('mo'){ font-size: 48rem; 
+        line-height: 1.2;}
+        span{ display: inline-block; width: 430rem;}
+      }
+      .img_box{ 
+        @include screen('mo'){ overflow: hidden; background: url(../images/pre_order_bg_m.svg)no-repeat center bottom / 100% auto; @include m_full_layout;border-bottom: 1px solid $ci; margin-top: -90rem;}
+        .hand_img{ width: 1646rem; margin: -634rem 0 0 -39rem;
+          @include screen('mo'){ width: 115%; margin: 0 0 0 -30rem;}
+        }
+        .phone_img{ width: 500rem; position: absolute; left: 621rem; top: 401rem;transform: rotate(15deg);
+          @include screen('mo'){ width: 125rem;left: 144rem;top: 109rem;}
+        }
+      }
+      .txt_box{ width: 643rem; position: absolute; right: 0; bottom: 140rem; 
+        @include screen('mo'){ margin-top: 60rem; position: static; width: 100%;}
+        .tit{ font-size: 32rem; margin-bottom: 40rem; padding-bottom: 40rem; border-bottom: 1px solid rgba($color: $black, $alpha: .4); line-height: 1.1;
+          @include screen('mo'){ font-size: 24rem; margin-bottom: 24rem; padding-bottom: 24rem;}
+        }
+        .info{ padding-right: $layout_pd;
+          @include screen('mo'){ padding-right: 0; letter-spacing: -0.1px;}
+          p{ font-size: 24rem; 
+            @include screen('mo'){ @include font-size(16rem);}
+            + p{ margin-top: 30rem; 
+              @include screen('mo'){ margin-top: 16rem;}
+            }
+          }
+        }
+      }
+    }
+    /* //PRE ORDER PRE ORDER PRE ORDER PRE ORDER */
+    
+    /* TO BE LAUNCHED TO BE LAUNCHED TO BE LAUNCHED */
+    &#to_be_launched{ padding-top: 240rem; background:$bg url(../images/to_be_launched_bg.png)no-repeat left bottom / cover;
+      @include screen('mo'){ padding-top: 160rem; background-size: 200% auto;}
+      .tit_box{
+        p{ margin-top: 24rem; font-size: 24rem;
+          @include screen('mo'){ font-size: 16rem;}
+        }
+      }
+
+      .to_be_launched_cont{ margin: 0 auto; padding: 200rem 0 410rem;
+        @include screen('pc'){ width: 1524rem !important;
+        }
+        @include screen('mo'){ width: 100%; padding: 50rem 0 133rem;@include m_full_layout('pd');}
+        ul{ 
+          @include screen('pc'){ display: block;}
+          li{ 
+            @include screen('pc'){ 
+              width: 600rem !important;
+              + li{ margin: -501rem 0 0 auto;}
+            }
+            @include screen('mo'){ 
+            }
+            .img_box{ border-radius: 11rem; overflow: hidden;}
+            .txt_box{ margin-top: 60rem; font-size: 24rem;
+              @include screen('mo'){ margin-top: 32rem; font-size: 16rem;}
+
+              .tit{ font-size: 40rem; margin-bottom: 40rem; line-height: 1.1;
+                @include screen('mo'){ font-size: 24rem; margin-bottom: 24rem;}
+              }
+            }
+          }
+        }
+      } 
+    }
+    /* //TO BE LAUNCHED TO BE LAUNCHED TO BE LAUNCHED */
+
+    /* CORE VALUE CORE VALUE CORE VALUE CORE VALUE */
+    &#core_value{ padding: 300rem 0 300rem;
+      @include screen('mo'){  padding: 120rem 0 300rem;}
+      .tit_box{line-height: 1.1;
+        h2{ font-size: 100rem; 
+          @include screen('mo'){ font-size: 48rem;}
+        }
+        p{ font-size: 40rem; margin-top: 6rem; color: $ci2_s;
+          @include screen('mo'){ font-size:24rem; margin-top: 16rem;}
+        
+        }
+      }
+      .sub_tit{ margin-top: 180rem; font-size: 40rem;
+        @include screen('mo'){ margin-top: 70rem; font-size: 24rem;}
+      }
+      .core_value_cont{ padding: 150rem 0 36rem; position: relative;
+        @include screen('mo'){ padding: 24rem 0 0;}
+        .core_value_tit{ width: 750rem; margin: 0 auto; position: relative;
+          @include screen('mo'){ width: 100%;}
+        }
+        .core_value_list{
+          ul{ position: absolute; left: 0; 
+            top: 40%; // 스크롤 시 리스트 등장 시작지점  
+            width: 100%;
+            @include screen('mo'){ 
+              top: 30%; // 스크롤 시 리스트 등장 시작지점 (모바일)
+            }
+            li{ display: flex; justify-content: flex-end;
+              + li{ margin-top: 80rem;}
+              &:nth-child(3n+2){ justify-content: flex-start;}
+              &:nth-child(3n+3){ justify-content: center; 
+              }
+              .cont_box{ width: 600rem; height: 480rem; border-radius: 10rem; background-color: $white; padding: 40rem; display: flex; flex-direction: column; justify-content: space-between; font-size: 24rem; transition: .3s ease;
+                @include screen('mo'){ width: 100%; height: 274rem; padding: 20rem; @include font-size(14rem); background: $ci2; color:$white;}
+                &:hover{background:$ci2; color: $white;}
+                .info{ font-weight: 500;}
+                .key{
+                  span{ display: block; font-size: 40rem; margin-top: 12rem;
+                    @include screen('mo'){ font-size: 24rem; margin-top: 5rem;} 
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    /* //CORE VALUE CORE VALUE CORE VALUE CORE VALUE */
+    
+    /* HISTORY HISTORY HISTORY HISTORY HISTORY HISTORY */
+    &#history{ height: 3000rem;  padding: 0 135rem;
+      @include screen('mo'){ padding: 0;}
+      .fade_up{ transform: translateY(100rem); opacity: 0; transition: 1s ease;}
+      &.aos-animate{
+        .dly2{ transition-delay: .2s;}
+        .dly4{ transition-delay: .4s;}
+        .dly6{ transition-delay: .6s;}
+        .dly8{ transition-delay: .8s;}
+        .fade_up{ transform: translateY(0rem); opacity: 1;
+        }
+      }
+      &.on{
+        .sticky_box .years .pointer{height: 553rem; top: 0;
+          @include screen('mo'){ height: 190rem;
+            &::after{transform: translate(-50%, 50%) scale(1);}
+          }
+        }
+      }
+      .sticky_box{
+        @include screen('mo'){ top: -100rem; height: calc(100vh + 100rem);}
+        > .inner{ height: 100%;}
+        .years{ border-left: 1px solid rgba($color: $black, $alpha: .2); padding-left: 16rem; position: absolute; left: 0; top: 0; height: 100%; z-index: 10;
+          @include screen('mo'){ left: $layout_pd_m;}
+          .pointer{ position: absolute; left: -1px; top: -10rem; height: 0; width: 1px; background-color: $ci; transition: 2s $expo;
+            @include screen('mo'){ top: 0;}
+            &::after{ content: ''; position: absolute; left: 0; bottom: 0; transform: translate(-50%, 50%); width: 15rem; height: 15rem; border-radius: 50%; background-color: $ci; transition: 1s $outback;
+              @include screen('mo'){ transform: translate(-50%, 50%) scale(0);}
+            }
+          }
+          ul{ position: relative; top: 539rem;
+            @include screen('mo'){ top: 181rem;}
+            li{ font-size: 20rem; height: 122rem;
+              @include screen('mo'){ font-size: 14rem; height: 93rem;}
+              &:first-child{color: $ci;}
+            }
+          }
+        }
+        .history_info{ width: 100%; height: 100%; display: flex; flex-direction: column;padding:101rem 0 0 160rem;
+          @include screen('mo'){ padding: 0;}
+          .tit_box{ position: relative; color: $ci2; flex-shrink: 0; overflow: hidden;
+            h2 { position: absolute; left: 0; top:50%; transform: translateY(-50%); line-height: 1.1;
+              @include screen('mo'){ position: static; transform: none; margin-bottom: 20rem;}
+            }
+            .years_num{ white-space: nowrap; display: block; letter-spacing: 54rem; font-size: 500rem; line-height: .9; position: relative; filter: opacity(.2);
+              @include screen('mo'){ font-size: 144rem; letter-spacing: 0;}
+              &::before{ content: ''; display: block; width: 100%; height: 36%; background:linear-gradient(transparent 0%, #FDF1EF 70%); position: absolute; left: 0; bottom: 0;}
+            }
+            .mo_tit{ font-size: 32rem; padding: 0 0 10rem 99rem;}
+          }
+          @include screen('mo'){ 
+          .his_cont_mo_wrap{ position: relative; height: 100%; overflow: hidden;@include m_full_layout;}
+          }
+          .info_box{ width: 100%; height: 400rem; overflow: hidden;
+            @include screen('mo'){ height: 100%; overflow: visible;}
+            
+            .inner{ padding-top: 70rem; border-top: 1px solid $black;
+              @include screen('mo'){ padding-top: 0; }
+            }
+            .tit{ font-size: 64rem;}
+            .info_list{ position: relative; 
+              ul{ position: absolute; left: 0; top:23rem; opacity: 0; transition: 1s $expo;
+                @include screen('mo'){ top: 40rem; padding:0 20rem 0 114rem; width: 100%;}
+                &.prv{ transform: translateY(-300rem);}
+                &.on{ transform: translateY(0%); opacity: 1;}
+                &.nxt{ transform: translateY(300rem);}
+                li{ display: flex;
+                  @include screen('mo'){ display: block;
+                    br{ display: none;}
+                  }
+                  + li{ margin-top: 24rem; padding-top: 20rem; border-top: 1px solid rgba($color: $black, $alpha: .2);
+                    @include screen('mo'){ margin-top: 12rem; padding-top: 12rem;}
+                    
+                  }
+                  span{ display: block; width: 310rem; flex-shrink: 0; font-size: 24rem;
+                    @include screen('mo'){ width: 100%; font-size: 18rem; margin-bottom: 8rem;}
+                  }
+                  p{ width: 100%; font-weight: 500;
+                    strong{ font-weight: 600; display: block;margin-top: 10rem;
+                      @include screen('mo'){ margin-top: 5rem;}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    /* //HISTORY HISTORY HISTORY HISTORY HISTORY HISTORY */
+    
+    /* CORE TECH WHITE PAPER CORE TECH WHITE PAPER 모바일 여기서부터 */
+    &#core_tech_white_paper{ padding-top: 120rem; overflow: hidden;
+      @include screen('mo'){ padding-top: 160rem;}
+      h2{ color: $ci2;}
+      .swiper{ margin-top: 81rem; overflow: visible;
+        @include screen('mo'){ margin-top:40rem;}
+        ul{
+          li{ width: 100%; height: 720rem; border-radius: 10rem; overflow: hidden; color: $white; position: relative; top: 0; transition: all 1s ease, top .3s ease;
+            @include screen('mo'){ height: 528rem; border-radius: 8rem;}
+            &:nth-child(1){ background-color: #E8D5D2; color: $black;}
+            &:nth-child(2){ background-color: $ci2;}
+            &:nth-child(3){ background-color: #8CA1A6;}
+            &:nth-child(4){ background-color: $black;}
+            &.aos-animate{
+              .graphic img{ transform: translateY(0); opacity: 1; transition-delay: .3s;}
+              &:nth-child(2) .graphic img{ transition-delay: .4s;}
+              &:nth-child(3) .graphic img{ transition-delay: .5s;}
+              &:nth-child(4) .graphic img{ transition-delay: .6s;}
+            }
+            @include screen('pc'){
+              &:hover{ top:-30rem;}
+            }
+            a{ width: 100%; height: 100%; display: flex; justify-content: space-between; flex-direction: column; padding: 48rem 40rem 60rem; position: relative; 
+              @include screen('mo'){ padding: 30rem 30rem 40rem;}
+              &:hover .arr_btn::after{animation: arr_move .5s ease both;}
+              .tit{ font-size: 40rem;}
+              .graphic{ display: flex; align-content: center; width: 100%; height: 318rem; position: absolute; left: 0; top: 190rem;
+                @include screen('mo'){ height: 202rem; top: 140rem;}
+                img{transform: translateY(20%); transition: 1s ease; opacity: 0;}
+              } 
+              .info{
+                p {font-size: 24rem;
+                  @include screen('mo'){ line-height: 1.2; font-size: 22rem;}
+                }
+                .more{ margin-top: 8rem; display: flex; gap: 10rem; align-items: center;
+                  @include screen('mo'){ gap: 8rem;}
+                  strong{ font-weight: 700;}
+                  .arr_btn{ width: 28rem; height: 28rem;
+                    @include screen('mo'){ width: 22rem; height: 22rem;}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    /* //CORE TECH WHITE PAPER CORE TECH WHITE PAPER */
+
+    /* KEY MEMBERS KEY MEMBERS KEY MEMBERS KEY MEMBERS KEY */
+    &#key_members{ padding-top: 300rem;
+      @include screen('mo'){ padding-top: 200rem;}
+      .tit_box{
+        h2 span{ font-size: 64rem;
+          @include screen('mo'){ font-size: 42rem;}
+        }
+        p{ margin-top: 24rem; font-size: 24rem; color: $ci2;
+          @include screen('mo'){font-size: 16rem;}
+        }
+      }
+      .members_list{ margin-top: 108rem; padding-top: 200rem; position: relative; 
+        @include screen('mo'){ margin-top: 80rem; padding-top: 50rem;}
+        .back_txt{ font-size: 340rem; opacity: .1; position: absolute; left: 0; top: -100rem; width: 100%;
+          @include screen('mo'){ top: 0;}
+          p + p{ transform: translateY(-40%);
+            @include screen('mo'){ transform: translateY(-25%);}
+          }
+          @include screen('mo'){ top: 0; font-size: 76rem; letter-spacing: -4rem;}
+        }
+        > ul{ display: flex; align-items: flex-end; gap: 18rem; position: relative; height: 1000rem;
+          @include screen('mo'){ height: auto; flex-direction: column; gap:103rem;}
+          > li{width: 100%; position: relative;
+            @include screen('mo'){
+              &:nth-child(1){ order: 2;}
+              &:nth-child(2){ order: 1;
+                img{ width: 280rem; margin: 0 auto; }
+              }
+              &:nth-child(3){ order: 3;}
+            }
+            img{ position: absolute; transition: .8s ease; left: 0; bottom: 400rem; width: 100%;
+              @include screen('mo'){ position: relative; bottom: 0;}
+            }
+            .txt_box{  padding: 40rem; border-radius: 10rem; background-color: #f0e7d5; width: 100%; display: flex; flex-direction: column; justify-content: space-between; z-index: 1; position: relative; height: 400rem; transition: .5s ease;
+              @include screen('mo'){ padding: 24rem; height: auto; background-color: $ci2; color: $white;}
+              .char_history{ margin-top: 78rem; max-height: 140rem; overflow: hidden; transition: .5s ease;
+                @include screen('mo'){ margin-top: 60rem; max-height: unset;}
+                .dot_list{ font-weight: 500; font-size: 20rem;
+                  @include screen('mo'){ font-size: 14rem;}
+                }
+                p{ font-weight: 500; margin-top: 20rem;
+                  @include screen('mo'){ margin-top: 16rem;}
+                }
+              }
+              .char_info{
+                p{ font-size: 24rem; margin-bottom: 12rem;
+                  @include screen('mo'){  font-size: 14rem; margin-bottom: 8rem;}
+                }
+                span{ font-size: 40rem;
+                  @include screen('mo'){ font-size: 24rem;}
+                }
+              }
+            }
+            @include screen('pc'){
+              &:hover{
+                img{ bottom: 470rem;}
+                .txt_box{ background-color: $ci2; color: $white; height: 620rem; 
+                  .char_history{ max-height: 400rem;}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    /* //KEY MEMBERS KEY MEMBERS KEY MEMBERS KEY MEMBERS */
+
+    /* BOARD MEMBERS BOARD MEMBERS BOARD MEMBERS BOARD MEMBERS */
+    &#board_members{ padding: 200rem 0 116rem; overflow: hidden;
+      @include screen('mo'){ padding: 160rem 0 40rem;}   
+      h2{ font-size: 40rem;
+        @include screen('mo'){ font-size: 24rem;}
+      }
+      .members_list{ overflow: visible; margin-top: 48rem;
+        @include screen('mo'){ font-size: 24rem; margin-top: 40rem;}
+        > ul{
+          > li{ border-radius: 10rem; background-color: #EEE5D0; padding: 66rem 50rem 0; width: 100%; height: 650rem;
+            @include screen('mo'){ height: 504rem; padding: 48rem 32rem 0;}
+            .img_box{ width: 230rem; height: 230rem; border-radius: 50%; background-color: #fff; overflow: hidden; margin: 0 auto 121rem;
+              @include screen('mo'){ width: 186rem; height: 186rem; margin-bottom: 68rem;}
+
+              img{ width: 100%; height: 100%; object-fit: cover; position: relative; top:0;}
+            }
+            .txt_box{
+              .name{display: flex; align-items: center; font-size: 36rem; margin-bottom: 10rem;
+                @include screen('mo'){ font-size: 24rem; margin-bottom: 8rem;}
+                span{ font-size: 16rem; font-weight: 700; margin-left: 6rem; opacity: .3;
+                  @include screen('mo'){ font-size: 12rem; margin-left: 8rem;}
+                }
+              }
+              .dot_list{ font-size: 16rem;
+                @include screen('mo'){ font-size: 14rem;}
+              }
+            }
+          }
+        }
+      }
+    }
+    /* //BOARD MEMBERS BOARD MEMBERS BOARD MEMBERS BOARD */
+  }
+}

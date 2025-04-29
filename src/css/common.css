@@ -1,0 +1,213 @@
+@charset "UTF-8";
+/* Responsive */
+/* 모바일에서 레이아웃에 가둬진 박스의 너비가 풀로 가져가야 할때 */
+/* Ellipsis */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("swiper.min.css");
+@import url("layout.css");
+@import url("header.css");
+@import url("footer.css");
+@import url("aos.css");
+@font-face {
+  font-family: "Pretendard";
+  font-display: swap;
+  src: url(../fonts/Pretendard-Light.eot);
+  src: local("☺"), url(../fonts/Pretendard-Light.eot#iefix) format("embedded-opentype"), url(../fonts/Pretendard-Light.woff2) format("woff2"), url(../fonts/Pretendard-Light.woff) format("woff"), url(../fonts/Pretendard-Light.otf) format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  font-display: swap;
+  src: url(../fonts/Pretendard-Regular.eot);
+  src: local("☺"), url(../fonts/Pretendard-Regular.eot#iefix) format("embedded-opentype"), url(../fonts/Pretendard-Regular.woff2) format("woff2"), url(../fonts/Pretendard-Regular.woff) format("woff"), url(../fonts/Pretendard-Regular.otf) format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  font-display: swap;
+  src: url(../fonts/Pretendard-Medium.eot);
+  src: local("☺"), url(../fonts/Pretendard-Medium.eot#iefix) format("embedded-opentype"), url(../fonts/Pretendard-Medium.woff2) format("woff2"), url(../fonts/Pretendard-Medium.woff) format("woff"), url(../fonts/Pretendard-Medium.otf) format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  font-display: swap;
+  src: url(../fonts/Pretendard-SemiBold.eot);
+  src: local("☺"), url(../fonts/Pretendard-SemiBold.eot#iefix) format("embedded-opentype"), url(../fonts/Pretendard-SemiBold.woff2) format("woff2"), url(../fonts/Pretendard-SemiBold.woff) format("woff"), url(../fonts/Pretendard-SemiBold.otf) format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  font-display: swap;
+  src: url(../fonts/Pretendard-Bold.eot);
+  src: local("☺"), url(../fonts/Pretendard-Bold.eot#iefix) format("embedded-opentype"), url(../fonts/Pretendard-Bold.woff2) format("woff2"), url(../fonts/Pretendard-Bold.woff) format("woff"), url(../fonts/Pretendard-Bold.otf) format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  font-display: swap;
+  src: url(../fonts/Pretendard-ExtraBold.eot);
+  src: local("☺"), url(../fonts/Pretendard-ExtraBold.eot#iefix) format("embedded-opentype"), url(../fonts/Pretendard-ExtraBold.woff2) format("woff2"), url(../fonts/Pretendard-ExtraBold.woff) format("woff"), url(../fonts/Pretendard-ExtraBold.otf) format("opentype");
+  font-weight: 800;
+  font-style: normal;
+}
+html {
+  height: 100%;
+  font-size: 1px;
+}
+@media (max-width: 1920px) {
+  html {
+    font-size: 0.052083333vw;
+  }
+}
+@media (max-width: 750px) {
+  html {
+    font-size: 0.266666667vw;
+  }
+}
+
+body {
+  min-width: 320px;
+  background-color: #e3e7f6;
+  color: #031C61;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(10px, 16rem, 999rem);
+  font-weight: 600;
+  line-height: 1.4;
+  word-wrap: break-word;
+  word-break: keep-all;
+  position: relative;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+@media (max-width: 750px) {
+  body {
+    font-size: clamp(10px, 14rem, 999rem);
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+::placeholder {
+  color: #6c6c6c;
+}
+
+body,
+div,
+p,
+span,
+a,
+section,
+label,
+input,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+header,
+footer,
+main,
+b,
+i,
+strong,
+select,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+object {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-style: normal;
+  outline: none !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  background-color: transparent;
+  border: 0 none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+label {
+  cursor: pointer;
+}
+
+img,
+video,
+svg {
+  display: block;
+  border: none;
+  width: 100%;
+}
+
+option {
+  color: inherit;
+}
+
+section {
+  position: relative;
+}
+
+picture {
+  display: block;
+  width: 100%;
+}

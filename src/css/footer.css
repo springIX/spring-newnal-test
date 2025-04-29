@@ -1,0 +1,115 @@
+@charset "UTF-8";
+/* Responsive */
+/* 모바일에서 레이아웃에 가둬진 박스의 너비가 풀로 가져가야 할때 */
+/* Ellipsis */
+#footer {
+  color: #ffffff;
+  background-color: #050f3B;
+  padding: 80rem 16rem;
+}
+@media (max-width: 750px) {
+  #footer {
+    display: block;
+  }
+  #footer .inner {
+    padding-top: 172rem;
+  }
+}
+#footer .vid_box {
+  position: relative;
+}
+#footer .vid_box::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: url(../images/footer_phone_frame.png) no-repeat center center/cover;
+}
+#footer .txt_box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media (max-width: 750px) {
+  #footer .txt_box {
+    position: static;
+  }
+}
+#footer .txt_box .footer_tit {
+  padding-top: 80rem;
+  font-size: 100rem;
+  line-height: 1.1;
+}
+@media (max-width: 750px) {
+  #footer .txt_box .footer_tit {
+    padding-top: 0;
+    font-size: 60rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+@media (max-width: 750px) {
+  #footer .txt_box .footer_info {
+    margin-top: 40rem;
+  }
+}
+#footer .txt_box .footer_info .contact_tit {
+  color: #FF4B1C;
+  font-size: 24rem;
+  font-weight: 500;
+}
+#footer .txt_box .footer_info ul {
+  display: flex;
+  padding-top: 12rem;
+  margin: 40rem 0 74rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+@media (max-width: 750px) {
+  #footer .txt_box .footer_info ul {
+    padding-top: 24rem;
+    display: block;
+    margin: 32rem 0 60rem;
+  }
+}
+@media (max-width: 750px) {
+  #footer .txt_box .footer_info ul li + li {
+    margin-top: 32rem;
+  }
+}
+#footer .txt_box .footer_info ul li p {
+  font-weight: 500;
+  font-size: 24rem;
+  margin-top: 32rem;
+}
+@media (max-width: 750px) {
+  #footer .txt_box .footer_info ul li p {
+    font-size: 20rem;
+    margin-top: 16rem;
+  }
+}
+#footer .txt_box .footer_info .contact_mail {
+  font-size: 24rem;
+  font-weight: 500;
+}
+@media (max-width: 750px) {
+  #footer .txt_box .footer_info .contact_mail {
+    font-size: 20rem;
+  }
+}
+#footer .txt_box .footer_info .contact_mail:hover {
+  text-decoration: underline;
+}
+#footer .txt_box .footer_info .copy {
+  font-weight: 500;
+  opacity: 0.6;
+  margin-top: 20rem;
+}
+@media (max-width: 750px) {
+  #footer .txt_box .footer_info .copy {
+    margin-top: 16rem;
+    font-size: 14rem;
+  }
+}

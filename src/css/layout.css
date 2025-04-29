@@ -1,0 +1,227 @@
+@charset "UTF-8";
+/* Responsive */
+/* 모바일에서 레이아웃에 가둬진 박스의 너비가 풀로 가져가야 할때 */
+/* Ellipsis */
+.layout_inner {
+  position: relative;
+  max-width: 100%;
+}
+@media (min-width: 751px) {
+  .layout_inner {
+    width: 1920rem !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 44rem !important;
+    padding-right: 44rem !important;
+  }
+}
+@media (max-width: 750px) {
+  .layout_inner {
+    padding-left: 16rem !important;
+    padding-right: 16rem !important;
+  }
+}
+
+.inner {
+  width: 100%;
+  position: relative;
+}
+
+.f_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.p_center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sticky_box {
+  position: sticky;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.taC {
+  text-align: center;
+}
+
+.taL {
+  text-align: left;
+}
+
+.taR {
+  text-align: right;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex_cnt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.flex_btm {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.dot_txt,
+.dot_list > li {
+  position: relative;
+  padding-left: 18rem;
+}
+@media (max-width: 750px) {
+  .dot_txt,
+  .dot_list > li {
+    padding-left: 12rem;
+  }
+}
+
+.dot_txt::before,
+.dot_list > li::before {
+  content: "•";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: -1rem;
+}
+
+.vh100 {
+  height: 100vh;
+}
+
+@media (min-width: 751px) {
+  .col2_box {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+.col2_box > * {
+  position: relative;
+}
+@media (min-width: 751px) {
+  .col2_box > * {
+    width: 50%;
+  }
+}
+
+.sld_nav {
+  display: flex;
+  justify-content: center;
+  gap: 10rem;
+  margin-top: 40rem;
+}
+.sld_nav span {
+  width: 44rem;
+  height: 44rem;
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.sld_nav span::before {
+  content: "";
+  width: 6rem;
+  height: 100%;
+  background: url(../images/ico_arr_nav.svg) no-repeat center center/contain;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s ease;
+}
+.sld_nav span.nxt {
+  transform: rotate(180deg);
+}
+.sld_nav span.swiper-button-disabled {
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: default;
+}
+.sld_nav span.swiper-button-disabled::before {
+  filter: brightness(0) invert(1);
+}
+
+.ib_br {
+  display: inline-block;
+}
+
+[data-aos=clip-up] {
+  clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%);
+}
+[data-aos=clip-up].aos-animate {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.fx {
+  display: block;
+  overflow: hidden;
+}
+.fx b {
+  display: block;
+  transform: translateY(130%);
+  transition: 1s cubic-bezier(0.25, 1, 0.5, 1);
+  font-weight: inherit;
+}
+
+.aos-animate .fx b {
+  transform: translateY(0);
+}
+.aos-animate .fx:nth-child(2) b {
+  transition-delay: 0.1s;
+}
+.aos-animate .fx:nth-child(3) b {
+  transition-delay: 0.2s;
+}
+.aos-animate .fx:nth-child(4) b {
+  transition-delay: 0.3s;
+}
+.aos-animate .fx:nth-child(5) b {
+  transition-delay: 0.4s;
+}
+.aos-animate .fx:nth-child(6) b {
+  transition-delay: 0.5s;
+}
+.aos-animate .fx:nth-child(7) b {
+  transition-delay: 0.6s;
+}
+
+@media (min-width: 751px) {
+  .mo {
+    display: none !important;
+  }
+}
+@media (max-width: 750px) {
+  .pc {
+    display: none !important;
+  }
+}
