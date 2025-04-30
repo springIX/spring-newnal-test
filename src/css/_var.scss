@@ -37,7 +37,11 @@ $bg: #e3e7f6;
     @media (max-width: 750px) {
       @content;
     }
-  } @else if $size == "inner" {
+  } @else if $size == "tablet" {
+    @media (max-width: 960px) {
+      @content;
+    }
+  }@else if $size == "inner" {
     @media (max-width: 1920px) {
       @content;
     }

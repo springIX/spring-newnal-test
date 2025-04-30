@@ -15,6 +15,9 @@
 #header .layout_inner {
   height: 100%;
 }
+#header .layout_inner.flex_cnt {
+  justify-content: end;
+}
 @media (max-width: 750px) {
   #header {
     height: 48rem;
@@ -22,6 +25,12 @@
 }
 #header.bg, #header.on {
   background-color: #ffffff;
+}
+#header.bg .layout_inner, #header.on .layout_inner {
+  height: 100%;
+}
+#header.bg .layout_inner.flex_cnt, #header.on .layout_inner.flex_cnt {
+  justify-content: space-between;
 }
 #header.bg .logo, #header.on .logo {
   filter: none;
@@ -32,12 +41,16 @@
 #header.bg .all_menu_btn::before, #header.bg .all_menu_btn::after, #header.on .all_menu_btn::before, #header.on .all_menu_btn::after {
   background-color: #000000;
 }
+#header.bg .logo, #header.on .logo {
+  display: block;
+}
 #header .logo {
   width: 78rem;
   filter: brightness(0) invert(1);
   transition: 0.3s ease;
   z-index: 2;
   position: relative;
+  display: none;
 }
 @media (max-width: 750px) {
   #header .logo {

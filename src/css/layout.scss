@@ -48,6 +48,11 @@
   display: flex;
   justify-content: space-between;
 }
+.flex_end {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
 .flex_cnt {
   display: flex;
   justify-content: space-between;

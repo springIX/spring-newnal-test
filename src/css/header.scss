@@ -1,18 +1,31 @@
 @import "var";
 
 #header { height: $header_h; position: fixed; left: 0; top: 0; z-index: 999; width: 100%; transition: .3s ease; color: $white;
-  .layout_inner{ height: 100%;}
+  .layout_inner{ height: 100%;
+    &.flex_cnt {
+      justify-content: end;
+    }
+  }
   @include screen('mo'){
     height: $header_h_m;
   }
   &.bg, &.on{ background-color: $white;
+    
+    .layout_inner{ height: 100%;
+      &.flex_cnt {
+        justify-content: space-between;
+      }
+    }
     .logo{filter: none;}
     .gnb{ color: $ci2;}
     .all_menu_btn{ 
       &::before, &::after{ background-color: $black;}
     }
+    .logo {
+      display: block;
+    }
   }
-  .logo{ width: 78rem; filter: brightness(0) invert(1); transition: .3s ease; z-index: 2; position: relative;
+  .logo{ width: 78rem; filter: brightness(0) invert(1); transition: .3s ease; z-index: 2; position: relative; display: none;
     @include screen('mo'){
       width: 40rem;
     }

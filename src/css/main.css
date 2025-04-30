@@ -209,6 +209,17 @@
     white-space: nowrap;
   }
 }
+#contents section#key_visual .sticky_box .visual_device .main_txt h1.web3_ai {
+  color: #FF4B1C;
+  font-size: 90rem;
+  font-weight: 700;
+}
+@media (max-width: 750px) {
+  #contents section#key_visual .sticky_box .visual_device .main_txt h1.web3_ai {
+    font-size: 36rem;
+    white-space: nowrap;
+  }
+}
 #contents section#key_visual .sticky_box .visual_device .main_txt h1 span {
   font-weight: 400;
 }
@@ -1847,6 +1858,12 @@
   width: 100%;
   height: 400rem;
   overflow: hidden;
+}
+@media (max-width: 960px) {
+  #contents section#history .sticky_box .history_info .info_box {
+    height: 450rem;
+    overflow: visible;
+  }
 }
 @media (max-width: 750px) {
   #contents section#history .sticky_box .history_info .info_box {
