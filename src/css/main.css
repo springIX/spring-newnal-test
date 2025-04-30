@@ -1872,13 +1872,19 @@
   }
 }
 #contents section#history .sticky_box .history_info .info_box .inner {
-  padding-top: 70rem;
+  padding-top: 50rem;
   border-top: 1px solid #000000;
 }
 @media (max-width: 750px) {
   #contents section#history .sticky_box .history_info .info_box .inner {
     padding-top: 0;
   }
+}
+#contents section#history .sticky_box .history_info .info_box .inner p.tit {
+  width: 45% !important;
+}
+#contents section#history .sticky_box .history_info .info_box .inner div.info_list {
+  width: 55% !important;
 }
 #contents section#history .sticky_box .history_info .info_box .tit {
   font-size: 64rem;
@@ -1948,6 +1954,7 @@
 #contents section#history .sticky_box .history_info .info_box .info_list ul li p {
   width: 100%;
   font-weight: 500;
+  font-size: 18rem;
 }
 #contents section#history .sticky_box .history_info .info_box .info_list ul li p strong {
   font-weight: 600;

@@ -627,8 +627,14 @@
             @include screen('tablet'){ height: 450rem; overflow: visible;}
             @include screen('mo'){ height: 100%; overflow: visible;}
             
-            .inner{ padding-top: 70rem; border-top: 1px solid $black;
+            .inner{ padding-top: 50rem; border-top: 1px solid $black;
               @include screen('mo'){ padding-top: 0; }
+              p {
+                &.tit {width: 45% !important;}
+              }
+              div {
+                &.info_list {width: 55% !important;}
+              }
             }
             .tit{ font-size: 64rem;}
             .info_list{ position: relative; 
@@ -648,7 +654,7 @@
                   span{ display: block; width: 310rem; flex-shrink: 0; font-size: 24rem;
                     @include screen('mo'){ width: 100%; font-size: 18rem; margin-bottom: 8rem;}
                   }
-                  p{ width: 100%; font-weight: 500;
+                  p{ width: 100%; font-weight: 500; font-size: 18rem;
                     strong{ font-weight: 600; display: block;margin-top: 10rem;
                       @include screen('mo'){ margin-top: 5rem;}
                     }

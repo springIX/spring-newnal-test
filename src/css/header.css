@@ -45,7 +45,7 @@
   display: block;
 }
 #header .logo {
-  width: 78rem;
+  width: 151rem;
   filter: brightness(0) invert(1);
   transition: 0.3s ease;
   z-index: 2;
@@ -54,7 +54,7 @@
 }
 @media (max-width: 750px) {
   #header .logo {
-    width: 40rem;
+    width: 136rem;
   }
 }
 #header .logo .logo_word {
@@ -79,7 +79,7 @@
   display: flex;
   gap: 60rem;
   font-weight: 700;
-  font-size: 14rem;
+  font-size: 16rem;
 }
 @media (max-width: 750px) {
   #header .gnb ul {
