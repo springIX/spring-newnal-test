@@ -278,7 +278,7 @@ document.addEventListener("DOMContentLoaded", () => {
               });
             });
           } else {
-            $(el).css({ color: "#031C61", fontWeight: 400 });
+            $(el).css({ color: "#031C61", fontWeight: 700 });
           }
         });
       }
