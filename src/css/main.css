@@ -505,7 +505,7 @@
 }
 @media (max-width: 750px) {
   #contents section#core_tech .core_tech_category .category_list ol > li .info_box .img_box img {
-    width: 80%;
+    width: 50%;
     height: auto;
     margin: 0 auto;
   }
@@ -515,7 +515,7 @@
 }
 @media (max-width: 750px) {
   #contents section#core_tech .core_tech_category .category_list ol > li .info_box .txt_box {
-    font-size: 18rem;
+    font-size: 16rem;
   }
 }
 #contents section#core_tech .core_tech_category .category_list ol > li .info_box .txt_box p + p {
@@ -733,6 +733,9 @@
   margin-left: -3%;
   letter-spacing: -1rem;
   min-height: 102rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 @media (max-width: 750px) {
   #contents section#spec .spec_main_list ul li p {

@@ -168,11 +168,11 @@
                 .img_box{ padding-top: 50rem;
                   @include screen('mo'){ padding: 0 0 32rem;}
                   img{ height: 430rem; width: 697rem; object-fit: contain;
-                    @include screen('mo'){ width: 80%; height: auto; margin: 0 auto;}
+                    @include screen('mo'){ width: 50%; height: auto; margin: 0 auto;}
                   }
                 }
                 .txt_box{ font-size: 36rem;
-                  @include screen('mo'){ font-size: 18rem;}
+                  @include screen('mo'){ font-size: 16rem;}
                   p + p{ margin-top: 40rem;
                     @include screen('mo'){ margin-top: 16rem;}
                   }
@@ -245,7 +245,7 @@
               &.display { grid-row: span 2; }
               &.cpu{ grid-row: span 2;}
             }
-            p{ text-align: center; font-size: 24rem; width: 106%; margin-left: -3%; letter-spacing: -1rem; min-height: 102rem;
+            p{ text-align: center; font-size: 24rem; width: 106%; margin-left: -3%; letter-spacing: -1rem; min-height: 102rem; display: flex; align-items: center; justify-content: center;
               @include screen('mo'){ font-size: 18rem; min-height: 75rem;}
             }
           }
