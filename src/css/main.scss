@@ -629,12 +629,6 @@
             
             .inner{ padding-top: 50rem; border-top: 1px solid $black;
               @include screen('mo'){ padding-top: 0; }
-              p {
-                &.tit {width: 45% !important;}
-              }
-              div {
-                &.info_list {width: 55% !important;}
-              }
             }
             .tit{ font-size: 64rem;}
             .info_list{ position: relative; 
@@ -655,6 +649,7 @@
                     @include screen('mo'){ width: 100%; font-size: 18rem; margin-bottom: 8rem;}
                   }
                   p{ width: 100%; font-weight: 500; font-size: 18rem;
+                    @include screen('mo'){ font-size: 15rem;}
                     strong{ font-weight: 600; display: block;margin-top: 10rem;
                       @include screen('mo'){ margin-top: 5rem;}
                     }
@@ -718,8 +713,8 @@
     /* //CORE TECH WHITE PAPER CORE TECH WHITE PAPER */
 
     /* KEY MEMBERS KEY MEMBERS KEY MEMBERS KEY MEMBERS KEY */
-    &#key_members{ padding-top: 300rem;
-      @include screen('mo'){ padding-top: 200rem;}
+    &#key_members{ padding: 300rem 0 200rem;
+      @include screen('mo'){ padding: 200rem 0 160rem;}
       .tit_box{
         h2 span{ font-size: 64rem;
           @include screen('mo'){ font-size: 42rem;}

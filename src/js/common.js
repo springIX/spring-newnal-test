@@ -4,16 +4,16 @@ $(function () {
   const mo_break_point = 750;
 
   /* LENIS */
-  window.lenis = new Lenis({
-    duration: 1,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-  });
+  // window.lenis = new Lenis({
+  //   duration: 1,
+  //   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  // });
 
-  function raf(time) {
-    window.lenis.raf(time); // ✅ 전역으로 접근
-    requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
+  // function raf(time) {
+  //   window.lenis.raf(time); // ✅ 전역으로 접근
+  //   requestAnimationFrame(raf);
+  // }
+  // requestAnimationFrame(raf);
 
   let lastScrollTop = 0;
   let header = $('#header');

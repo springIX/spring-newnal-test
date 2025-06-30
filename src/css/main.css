@@ -1883,12 +1883,6 @@
     padding-top: 0;
   }
 }
-#contents section#history .sticky_box .history_info .info_box .inner p.tit {
-  width: 45% !important;
-}
-#contents section#history .sticky_box .history_info .info_box .inner div.info_list {
-  width: 55% !important;
-}
 #contents section#history .sticky_box .history_info .info_box .tit {
   font-size: 64rem;
 }
@@ -1958,6 +1952,11 @@
   width: 100%;
   font-weight: 500;
   font-size: 18rem;
+}
+@media (max-width: 750px) {
+  #contents section#history .sticky_box .history_info .info_box .info_list ul li p {
+    font-size: 15rem;
+  }
 }
 #contents section#history .sticky_box .history_info .info_box .info_list ul li p strong {
   font-weight: 600;
@@ -2112,11 +2111,11 @@
   }
 }
 #contents section#key_members {
-  padding-top: 300rem;
+  padding: 300rem 0 200rem;
 }
 @media (max-width: 750px) {
   #contents section#key_members {
-    padding-top: 200rem;
+    padding: 200rem 0 160rem;
   }
 }
 #contents section#key_members .tit_box h2 span {
